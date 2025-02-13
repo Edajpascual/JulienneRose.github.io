@@ -1,0 +1,114 @@
+body {
+  text-align: center;
+  margin-top: 30px;
+  font-family: "Courier";
+  background-color: #fff5e4;
+  color: #ff9494;
+}
+
+#foodquestion {
+  font-size: 50px;
+  margin-bottom: 30px;
+}
+
+.food-item {
+  display: inline-block;
+  margin: 10px;
+  vertical-align: top;
+  color: #ff9494;
+  position: relative;
+}
+
+.food-item img {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  border: 5px solid #ff9494;
+  object-fit: cover;
+  padding: 10px;
+}
+
+.food-item label {
+  display: block;
+}
+
+.button {
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  margin: 10px;
+  font-family: "Courier";
+  margin-bottom: 20px;
+  background-color: #ffe3e1;
+  color: #e67373;
+  border-radius: 12px;
+  border: 2px solid #ffe3e1;
+}
+
+/* HEARTS */
+.hearts {
+  position: absolute;
+  top: 90px;
+  left: 20%;
+  transform: translateX(-50%);
+  z-index: 3;
+  opacity: 0;  /* Initially hidden */
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* SHOW HEARTS ON HOVER */
+.food-item:hover .hearts {
+  opacity: 1;
+}
+
+/* HEART STYLE */
+.heart {
+  background-color: red;
+  display: inline-block;
+  height: 10px;
+  position: relative;
+  transform: rotate(-45deg);
+  width: 10px;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  background-color: red;
+  border-radius: 50%;
+  height: 10px;
+  position: absolute;
+  width: 10px;
+}
+
+.heart::before {
+  top: -5px;
+  left: 0;
+}
+
+.heart::after {
+  left: 5px;
+  top: 0;
+}
+
+/* HEART POSITIONS */
+.one { left: 0px; animation: heart 1s ease-out infinite; }
+.two { left: 20px; animation: heart 2s ease-out infinite; }
+.three { left: 40px; animation: heart 1.5s ease-out infinite; }
+.four { left: 60px; animation: heart 2.3s ease-out infinite; }
+.five { left: 80px; animation: heart 1.7s ease-out infinite; }
+.six { left: 100px; animation: heart 2s ease-out infinite; }
+.seven { left: 120px; animation: heart 1.5s ease-out infinite; }
+.eight { left: 140px; animation: heart 2.3s ease-out infinite; }
+
+/* HEART FLOAT ANIMATION */
+@keyframes heart {
+  0% {
+      transform: translateY(0) rotate(-45deg) scale(0.3);
+      opacity: 1;
+  }
+  100% {
+      transform: translateY(-150px) rotate(-45deg) scale(1.3);
+      opacity: 0.5;
+  }
+}
