@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hi Jules</title>
+    <link rel="stylesheet" href="css/card.css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="valentines">
+            <div class="envelope">
+                <img src="jules.gif" class="cat-image" id="cat-image" />
+                <div class="card">
+                    <div class="text">Will you</br>be my</br>Valentine?</div>
+                    <button class="heart-btn">
+                        <div class="heart"></div>
+                    </button>
+                    <div class="hearts">
+                        <div class="one"></div>
+                        <div class="two"></div>
+                        <div class="three"></div>
+                        <div class="four"></div>
+                        <div class="five"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="front"></div>
+        </div>
+        <div class="shadow"></div>
+    </div>
+
+    <div class="message">
+      Dear Julienne Rose
+    </div>
+    
+    <div class="audio-container">
+        <audio autoplay loop style="display: none;">
+            <source src="paperrings.mp3" type="audio/mpeg" />
+            Your browser does not support the audio element.
+          </audio>
+      <button class="answerButton" id="yesButton" onclick="location.href='thankyou.html'">
+        Yes, Good sir
+      </button>
+      <button class="answerButton" id="noButton">Hell No</button>
+      <br />
+  </div>
+
+    <img src="maem.gif" class="mad-image" />
+    <img src="meow.gif" class="meow-image" />
+    <img src="draco.gif" class="dog-image" />
+
+    <script>
+      $(document).ready(function () {
+    let noButtonClicks = 0;
+
+    // Mouse enter and leave animation for card and cat image
+    $('.container').mouseenter(function () {
+        $('.card').stop().animate({ top: '-90px' }, 'slow');
+        $('.cat-image').stop().animate({ top: '-260px' }, 'slow'); // Move image even higher
+    }).mouseleave(function () {
+        $('.card').stop().animate({ top: '5px' }, 'slow');
+        $('.cat-image').stop().animate({ top: '-70px' }, 'slow'); // Reset image position
+    });
+
+    // Heart button click event
+    $('.heart-btn').click(function () {
+        $(this).toggleClass('active');
+    });
+
+    // No button click event
+    document.getElementById("noButton").addEventListener("click", function () {
+        noButtonClicks++;
+
+        var yesButton = document.getElementById("yesButton");
+        var currentFontSize = parseInt(window.getComputedStyle(yesButton).fontSize);
+
+        if (noButtonClicks < 4) {
+            yesButton.style.fontSize = currentFontSize + 10 + "px"; // Increase font size by 10px
+        } else if (noButtonClicks === 4) {
+            // Disable the "No" button on the 4th click
+            yesButton.style.fontSize = currentFontSize + "px"; // Stop size increase
+            console.log(noButtonClicks);
+            // Show the "super-mad.gif" image
+            $('.mad-image').fadeIn();
+        } else if (noButtonClicks === 5) {
+            // Remove any previous image and show "meow.gif"
+            console.log(noButtonClicks);
+            $('.mad-image').fadeOut(function () {
+                $('.meow-image').fadeIn(); // Fade in "meow.gif"
+            });
+        } else if (noButtonClicks === 6) {
+            // Remove any previous image and show "draco.gif"
+            this.style.display = "none"; // Hide the "No" button
+            console.log(noButtonClicks);
+            $('.meow-image').fadeOut(function () {
+                $('.dog-image').fadeIn(); // Fade in "draco.gif"
+            });
+            yesButton.innerText = "Yessssssss"; // Change text of the "Yes" button
+        }
+    });
+});
+
+  </script>
+  
+  
+  
+</body>
+</html>

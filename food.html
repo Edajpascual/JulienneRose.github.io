@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Selection</title>
+    <link rel="stylesheet" href="css/food.css">
+</head>
+<body>
+    <div id="foodquestion">
+        <b>Where do you wanna eat?</b>
+    </div>
+
+    <div class="food-selection">
+        <div class="food-item">
+            <div class="hearts">
+                <div class="heart one"></div>
+                <div class="heart two"></div>
+                <div class="heart three"></div>
+                <div class="heart four"></div>
+                <div class="heart five"></div>
+                <div class="heart six"></div>
+                <div class="heart seven"></div>
+                <div class="heart eight"></div>
+            </div>
+            <img src="food/Alba.jpg" alt="Alba Spanish Restaurant">
+            <label>
+              <input type="checkbox" class="food-checkbox">
+              Alba <span class="star">⭐</span>
+            </label>
+        </div>
+
+        <div class="food-item">
+            <div class="hearts">
+                <div class="heart one"></div>
+                <div class="heart two"></div>
+                <div class="heart three"></div>
+                <div class="heart four"></div>
+                <div class="heart five"></div>
+                <div class="heart six"></div>
+                <div class="heart seven"></div>
+                <div class="heart eight"></div>
+            </div>
+            <img src="food/barbaras.webp" alt="Barbaras">
+            <label>
+                <input type="checkbox" class="food-checkbox">
+                Barbaras
+            </label>
+        </div>
+
+        <div class="food-item">
+            <div class="hearts">
+                <div class="heart one"></div>
+                <div class="heart two"></div>
+                <div class="heart three"></div>
+                <div class="heart four"></div>
+                <div class="heart five"></div>
+                <div class="heart six"></div>
+                <div class="heart seven"></div>
+                <div class="heart eight"></div>
+            </div>
+            <img src="food/tepanya.jpg" alt="Teppanya">
+            <label>
+              <input type="checkbox" class="food-checkbox">
+              Teppanya <span class="chef-hat">👨‍🍳</span>
+            </label>
+        </div>
+
+        <div class="food-item">
+          <div class="hearts">
+              <div class="heart one"></div>
+              <div class="heart two"></div>
+              <div class="heart three"></div>
+              <div class="heart four"></div>
+              <div class="heart five"></div>
+              <div class="heart six"></div>
+              <div class="heart seven"></div>
+              <div class="heart eight"></div>
+          </div>
+          <img src="food/illustrado.jpg" alt="Illustrados">
+          <label>
+              <input type="checkbox" class="food-checkbox">
+              Illustrados
+          </label>
+      </div>
+
+        <div class="food-item">
+          <div class="hearts">
+              <div class="heart one"></div>
+              <div class="heart two"></div>
+              <div class="heart three"></div>
+              <div class="heart four"></div>
+              <div class="heart five"></div>
+              <div class="heart six"></div>
+              <div class="heart seven"></div>
+              <div class="heart eight"></div>
+          </div>
+          <img src="food/black pig.png" alt="Black Pig">
+          <label>
+              <input type="checkbox" class="food-checkbox">
+              Black Pig
+          </label>
+      </div>
+
+      <div class="food-item">
+        <div class="hearts">
+            <div class="heart one"></div>
+            <div class="heart two"></div>
+            <div class="heart three"></div>
+            <div class="heart four"></div>
+            <div class="heart five"></div>
+            <div class="heart six"></div>
+            <div class="heart seven"></div>
+            <div class="heart eight"></div>
+        </div>
+        <img src="food/hai.jpg" alt="Hai Chix">
+        <label>
+            <input type="checkbox" class="food-checkbox">
+            Hai Chix
+        </label>
+    </div>
+
+    </div>
+
+    <button class="button" onclick="location.href='activities.html'">Let's Goooo</button>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const foodItems = document.querySelectorAll(".food-item");
+
+            foodItems.forEach(item => {
+                const checkbox = item.querySelector(".food-checkbox");
+                const hearts = item.querySelector(".hearts");
+
+                checkbox.addEventListener("change", function () {
+                    if (checkbox.checked) {
+                        hearts.style.opacity = "1"; // Show hearts
+                    } else {
+                        hearts.style.opacity = "0"; // Hide hearts
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
